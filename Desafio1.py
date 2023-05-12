@@ -1,13 +1,12 @@
 import sqlite3
 
-conx=sqlite3.connect("CROSSANDINO.db") # Path del archivo.
+conx=sqlite3.connect("C:/Users/leo_r/OneDrive/Documentos/Tecnicatura de Desarrollo de Software/Segundo Año/Programacion 2/CROSSANDINO.db")
 dats=conx.cursor()
 dats1=conx.cursor()
 competidorxs=[]
-for i in range(2):
+for i in range(20):
     print(f"Ingrese los datos de la persona{i+1}")
     apelnomb=input("Apellido y Nombre: ")
-    psto=(i+1)
     edad=int(input("Edad: "))
     if edad >= 18:
         mayor=edad
@@ -15,16 +14,16 @@ for i in range(2):
         segs=int(input("Segundos: "))
         tmpo=f"{mins:02d}:{segs:02d}"
         pais=input("País de origen: ")
-        adultos=(psto,apelnomb,mayor,tmpo,pais)
-        dats.execute("INSERT INTO CategoriaAdultos VALUES (?, ?, ?, ?, ?)",adultos)
+        adultos=(apelnomb,mayor,tmpo,pais)
+        dats.execute("INSERT INTO CategoriaAdultos VALUES (?, ?, ?, ?)",adultos)
     else:
         menor=edad
         mins=int(input("Minutos: "))
         segs=int(input("Segundos: "))
         tmpo=f"{mins:02d}:{segs:02d}"
         pais=input("País de origen: ")   
-        menores=(psto,apelnomb,menor,tmpo,pais)      
-        dats1.execute("INSERT INTO CategoriaJuniors VALUES (?, ?, ?, ?, ?)",menores)
+        menores=(apelnomb,menor,tmpo,pais)      
+        dats1.execute("INSERT INTO CategoriaJuniors VALUES (?, ?, ?, ?)",menores)
 competidorxs.append(adultos)
 competidorxs.append(menores)
 conx.commit()
