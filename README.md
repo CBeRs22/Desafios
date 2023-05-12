@@ -6,7 +6,7 @@ todas partes del mundo. Se realiza en la selva valdiviana cercana a San Martín 
 dura un solo día. La competencia se llama CROSSANDINO.
 Hay dos categorías: Tenemos categoría Juniors para menores a 18 años y categoría Adultos
 para las edades de 18 a más.
-La base de datos al menos *deberá contener 20 registros de corredores de cada categoría* con 
+La base de datos al menos (*deberá contener 20 registros de corredores de cada categoría*) con 
 sus respectivos tiempos de llegada a la meta final. Esta información está mezclada, no en 
 orden, sino como fue registrada por los empleados en cargar los datos.
 Se requiere por parte del diseñador de software una base de datos y los programas acordes a 
