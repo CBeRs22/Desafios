@@ -1,6 +1,6 @@
 import sqlite3
 
-conx=sqlite3.connect("C:/Users/leo_r/OneDrive/Documentos/Tecnicatura de Desarrollo de Software/Segundo Año/Programacion 2/CROSSANDINO.db")
+conx=sqlite3.connect("/CROSSANDINO.db") # Path del archivo.
 dats=conx.cursor()
 dats1=conx.cursor()
 competidorxs=[]
