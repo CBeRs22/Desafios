@@ -3,7 +3,7 @@ import sqlite3
 conx=sqlite3.connect("CROSSANDINO.db") # Path del archivo.
 dats=conx.cursor()
 competidorxs=[]
-for i in range(2):
+for i in range(20):
     print(f"Ingrese los datos de la persona{i+1}")
     apelnomb=input("Apellido y Nombre: ")
     psto=(i+1)
