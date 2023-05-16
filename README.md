@@ -1,5 +1,3 @@
-**FaltaCompletar**
-
 # Desafios
 Desafio_01
 Se desea diseñar una Base de datos los resultados de una carrera internacional de 
@@ -15,6 +13,3 @@ Se requiere por parte del diseñador de software una base de datos y los program
 las necesidades requeridas para obtener los siguientes datos:
 Conocer los tres primeros puestos de cada categoría: Apellido y nombre, edad, tiempo y país de 
 origen.
-
-*Al Desafio1.py hay que agregarle la parte que pida 20 participantes para cada categoria.
-20 participantes para la categoría adultos y 20 participantes para la categoría juniors.
