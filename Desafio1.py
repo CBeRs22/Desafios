@@ -1,4 +1,4 @@
-#Creación y conexion y del archivo.db con sus dos respectetivas tablas.
+#Creación y conexion del archivo.db con sus dos respectetivas tablas.
 
 import sqlite3
 
