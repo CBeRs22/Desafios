@@ -2,7 +2,7 @@
 
 import sqlite3
 
-conx=sqlite3.connect("C:/Users/LeonelCabral/Desafio1/CROSSANDINO.db")
+conx=sqlite3.connect("C:/User/LeonelCabral/CROSSANDINO.db") #Path del archivo.db
 dats=conx.cursor()
 dats1=conx.cursor()
 
@@ -29,12 +29,12 @@ dats1.execute(tabmen)
 
 competidorxs=[]
 for i in range(20):
-    print(f"Categoría Adultos: PARTICIPANTE N°{i+1}: ")
+    print(f"\n #CATEGORÍA ADULTOS \n\n PARTICIPANTE N°{i+1}: ")
     apelnomb=input("Apellido y Nombre: ")    
     edad=int(input("Edad: "))
     
     while edad < 18:
-        print("Por favor solo ingrese participantes mayores a 18 años, gracias")
+        print("\n Por favor solo ingrese participantes mayores a 18 años, gracias \n")
         apelnomb=input("Apellido y Nombre: ")
         edad=int(input("Edad: "))
     mayor=edad
@@ -47,15 +47,15 @@ for i in range(20):
     dats.execute("INSERT INTO categoría_adultos VALUES (?, ?, ?, ?)",adultos)
     
 competidorxs.append(adultos)
-print("No hay mas cupos para la categoría Adultos")
+print("\n No hay mas cupos para la categoría Adultos. \n")
 
 for h in range(20):
-    print(f"Categoría Juniors: PARTICIPANTE N°{h+1}: ")
+    print(f"\n #CATEGORÍA JUNIORS \n\n PARTICIPANTE N°{h+1}: ")
     apelnomb=input("Apellido y Nombre: ")
     
     edad=int(input("Edad: "))
     while edad > 17:
-        print("Por favor solo ingrese participantes menores a 18 años, gracias")
+        print("\n Por favor solo ingrese participantes menores a 18 años, gracias \n")
         apelnomb=input("Apellido y Nombre: ")
         edad=int(input("Edad: "))
     menor=edad
@@ -69,9 +69,23 @@ for h in range(20):
     
 competidorxs.append(menores)
 
-#Al terminar el bucle para los datos ingresados, finalizamos la conexion del archivo.db y el archivo.py
+#Al terminar el bucle para los datos ingresados, se crea 2 consultas para cada tabla y generar los puestos del primero al último.
+
+cons='''CREATE VIEW PuestosCatAdults AS SELECT RANK() OVER (ORDER BY Tiempo ASC) AS Puesto, *
+FROM categoría_adultos
+ORDER BY Tiempo ASC
+'''
+dats.execute(cons)
+
+cons1='''CREATE VIEW PuestosCatJrs AS SELECT RANK() OVER (ORDER BY Tiempo ASC) AS Puesto, *
+FROM categoría_juniors
+ORDER BY Tiempo ASC
+'''
+dats1.execute(cons1)
+
+#Finalizacion de la conexion del archivo.db con el archivo.py
 
 conx.commit()
 conx.close()
-print("No hay mas cupos para la categoría Juniors.")
-print("vuelvas prontos!!!")
+print("\n No hay mas cupos para la categoría Juniors. \n")
+print("Datos ingresados exitosamente.")
